@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wheely: one
+  user: one
+  booking_date: 2018-02-19
+
+two:
+  wheely: two
+  user: two
+  booking_date: 2018-02-19
