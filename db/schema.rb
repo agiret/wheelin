@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180219163540) do
+ActiveRecord::Schema.define(version: 20180219165207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "wheely_id"
+    t.bigint "user_id"
+    t.date "booking_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+    t.index ["wheely_id"], name: "index_bookings_on_wheely_id"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -38,4 +48,19 @@ ActiveRecord::Schema.define(version: 20180219163540) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "wheelies", force: :cascade do |t|
+    t.bigint "category_id"
+    t.bigint "user_id"
+    t.text "description"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_wheelies_on_category_id"
+    t.index ["user_id"], name: "index_wheelies_on_user_id"
+  end
+
+  add_foreign_key "bookings", "users"
+  add_foreign_key "bookings", "wheelies"
+  add_foreign_key "wheelies", "categories"
+  add_foreign_key "wheelies", "users"
 end
