@@ -2,14 +2,13 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
-    <img src="../../app/assets/images/logo.png" alt="logo">
+    <%= image_tag 'logo.png', alt: 'logo' %>
   </a>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <%= link_to "Offers", wheelies_path %>
-
-    <a href="#" class="navbar-wagon-item navbar-wagon-link">Post an ad</a>
+    <%= link_to "Offers", wheelies_path, :class "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Post an ad", new_wheely_path, :class "navbar-wagon-item navbar-wagon-link" %>
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
