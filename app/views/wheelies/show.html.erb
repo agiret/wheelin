@@ -3,9 +3,13 @@
 <p> <%= @wheely.description %></p>
 <p> <%= @wheely.price %> <i class="fas fa-euro-sign"></i></p>
 
-<%= link_to 'Edit', edit_wheely_path(@wheely) %> <br>
-<%= link_to "Delete", wheely_path(@wheely),
+<% if policy(@wheely).update? %>
+  <%= link_to 'Edit', edit_wheely_path(@wheely) %> <br>
+<% end %>
+<% if policy(@wheely).destroy? %>
+  <%= link_to "Delete", wheely_path(@wheely),
       method: :delete,
       data: { confirm: "Are you sure?" } %> <br>
+<% end %>
 
 <%= link_to 'Back to Wheelies', wheelies_path %>
