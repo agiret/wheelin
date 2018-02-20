@@ -1,7 +1,7 @@
 class WheeliesController < ApplicationController
   before_action :set_wheely, only: [:show, :edit, :update, :destroy]
   def index
-    @wheelies = Wheely.all
+    @wheelies = policy_scope(Wheely).order(created_at: :desc)
   end
 
   def show
@@ -13,10 +13,12 @@ class WheeliesController < ApplicationController
 
   def new
     @wheely = Wheely.new
+    authorize(@wheely)
   end
 
   def create
     @wheely = Wheely.new(wheely_params)
+    authorize(@wheely)
     @wheely.user = current_user
 
     if @wheely.save
@@ -47,6 +49,7 @@ class WheeliesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
   def set_wheely
     @wheely = Wheely.find(params[:id])
+    authorize(@wheely)
   end
 
     # Never trust parameters from the scary internet, only allow the white list through.
