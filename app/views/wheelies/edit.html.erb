@@ -1,2 +1,5 @@
-<h1>Wheelies#edit</h1>
-<p>Find me in app/views/wheelies/edit.html.erb</p>
+<h1>Edit <%= @wheely.title %></h1>
+
+<%= render 'form', wheely: @wheely %>
+
+<%= link_to 'Back to Wheelies', root_path %>

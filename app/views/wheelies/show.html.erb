@@ -1,2 +1,6 @@
-<h1>Wheelies#show</h1>
-<p>Find me in app/views/wheelies/show.html.erb</p>
+<h1> <%= @wheely.title %></h1>
+
+<p> <%= @wheely.description %></p>
+<p> <%= @wheely.price %> <i class="fas fa-euro-sign"></i></p>
+
+<%= link_to 'Back to Wheelies', root_path %>
