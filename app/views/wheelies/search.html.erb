@@ -1,13 +1,14 @@
 <h1>Our Wheelies</h1>
-
+<%= @wheelies.count %>
 <div class="container">
   <div class="row">
     <% @wheelies.each do |wheely| %>
+
       <div class="col-xs-12 col-sm-4 col-md-3">
         <%= link_to(wheely_path(wheely), class: "card") do %>
           <h2> <%= wheely.title %></h2>
           <p> <%= wheely.description %></p>
-          <p> <%= wheely.price %> <i class="fas fa-euro-sign"></i></p>
+          <p> <%= wheely.price %> <i class="fas fa-euro-sign"></i> </p>
         <% end %>
       </div>
     <% end%>
