@@ -3,7 +3,7 @@ class Wheely < ApplicationRecord
   belongs_to :user
   has_many :bookings
 
-  validates :address, prensence: true
-  validates :description, prensence: true
-  validates :category_id, prensence: true
+  validates :address, presence: true
+  validates :description, presence: true
+  validates :category_id, presence: true
 end

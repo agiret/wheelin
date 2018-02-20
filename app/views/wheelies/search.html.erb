@@ -1,2 +1,15 @@
-<h1>Wheelies#search</h1>
-<p>Find me in app/views/wheelies/search.html.erb</p>
+<h1>Our Wheelies</h1>
+
+<div class="container">
+  <div class="row">
+    <% @wheelies.each do |wheely| %>
+      <div class="col-xs-12 col-sm-4 col-md-3">
+        <%= link_to(wheely_path(wheely), class: "card") do %>
+          <h2> <%= wheely.title %></h2>
+          <p> <%= wheely.description %></p>
+          <p> <%= wheely.price %> <i class="fas fa-euro-sign"></i></p>
+        <% end %>
+      </div>
+    <% end%>
+  </div>
+</div>
