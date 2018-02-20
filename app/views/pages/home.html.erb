@@ -2,6 +2,13 @@
   <div class="banner-content">
     <h1>WheelIn</h1>
     <p>What king of wheeler you are?</p>
+    <div class="form-group">
+      <select class="form-control" id="search_home">
+        <% Category.all.each do |category| %>
+          <option><%= category.name %></option>
+        <% end %>
+      </select>
+    </div>
     <a class="btn btn-success btn-lg">Search</a>
   </div>
 </div>
