@@ -18,14 +18,11 @@ class WheeliesController < ApplicationController
   def create
     @wheely = Wheely.new(wheely_params)
     @wheely.user = current_user
-    respond_to do |format|
-      if @wheely.save
-        format.html { redirect_to @wheely, notice: 'Wheely was successfully created.' }
-        format.json { render :show, status: :created, location: @wheely }
-      else
-        format.html { render :new }
-        format.json { render json: @wheely.errors, status: :unprocessable_entity }
-      end
+
+    if @wheely.save
+      redirect_to @wheely, notice: 'Wheely was successfully created.'
+    else
+      render :new
     end
   end
 
