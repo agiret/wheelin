@@ -17,6 +17,7 @@ class WheeliesController < ApplicationController
 
   def create
     @wheely = Wheely.new(wheely_params)
+    @wheely.user = current_user
     respond_to do |format|
       if @wheely.save
         format.html { redirect_to @wheely, notice: 'Wheely was successfully created.' }
