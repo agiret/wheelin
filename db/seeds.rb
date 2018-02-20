@@ -10,7 +10,7 @@ User.destroy_all
 Category.destroy_all
 Wheely.destroy_all
 
-CATEGORIES = ["Vélo", "Skateboard", "Roller", "Trotinette", "Monocycle", "tandem"]
+CATEGORIES = ["Bike", "Carriage", "Quadricycle", "Roller", "Scooter", "Segway", "Skateboard", "Tandem", "Unicycle", "Wheelbarrow"]
 
 CATEGORIES.each do |category|
   Category.create(name: category)
