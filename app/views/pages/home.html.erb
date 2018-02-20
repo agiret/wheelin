@@ -1,3 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "add a new wheely",  new_wheely_path %>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(86,101,89,0.3) 0%, rgba(25,36,61,0.4) 50%), url(<%= asset_path 'home.jpg' %>);">
+  <div class="banner-content">
+    <h1>WheelIn</h1>
+    <p>What king of wheeler you are?</p>
+    <a class="btn btn-success btn-lg">Search</a>
+  </div>
+</div>
