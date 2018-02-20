@@ -30,23 +30,17 @@ class WheeliesController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @wheely.update(wheely_params)
-        format.html { redirect_to @wheely, notice: 'Wheely was successfully updated.' }
-        format.json { render :show, status: :ok, location: @wheely }
-      else
-        format.html { render :edit }
-        format.json { render json: @wheely.errors, status: :unprocessable_entity }
-      end
+    if @wheely.update(wheely_params)
+      redirect_to @wheely, notice: 'Wheely was successfully updated.'
+    else
+      render :edit
     end
   end
 
 
   def destroy
     @wheely.destroy
-    respond_to do |format|
-      format.html { redirect_to wheely_path(@wheely), notice: 'Wheely was successfully destroyed.' }
-      format.json { head :no_content }
+    redirect_to wheely_path(@wheely), notice: 'Wheely was successfully destroyed.'
     end
   end
 
