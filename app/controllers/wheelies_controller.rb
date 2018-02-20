@@ -40,7 +40,7 @@ class WheeliesController < ApplicationController
 
   def destroy
     @wheely.destroy
-    redirect_to wheely_path(@wheely), notice: 'Wheely was successfully destroyed.'
+    redirect_to wheelies_path, notice: 'Wheely was successfully destroyed.'
   end
 
   private
