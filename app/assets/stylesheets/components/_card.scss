@@ -1,0 +1,112 @@
+.card-content {
+
+  height: 200px;
+
+}
+
+.card {
+
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  height: 180px;
+  position: relative;
+  padding-top: 10px;
+}
+
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+}
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-description h2 {
+  font-size: 24px;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.card-description p {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
+.card-footer {
+background-color: black;
+position: relative;
+position: absolute;
+bottom: 0px;
+}
+
+.card-price {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.wheely_card{
+  height: 200px;
+  background-color: red;
+  margin-top: 20px;
+}
+
+.wheely_card_body{
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  height: 150px;
+  position: relative;
+    .price{
+      position: absolute;
+      left: 10px;
+      top: 10%;
+
+  }
+}
+
+.wheely_card_footer{
+  background-color: white;
+  height: 50px;
+  position: relative;
+
+  img {
+    height: 80%;
+    position: absolute;
+    right: 20px;
+    top: 10%;
+    border-radius: 50%;
+  }
+  .wheely_card_title{
+      position: absolute;
+      left: 10px;
+      top: 20%;
+    }
+}

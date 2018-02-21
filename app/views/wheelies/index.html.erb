@@ -1,15 +1,19 @@
 <h1>All our Wheelies</h1>
 
-<div class="container">
+ <div class="container">
   <div class="row">
     <% @wheelies.each do |wheely| %>
       <div class="col-xs-12 col-sm-4 col-md-3">
-        <%= link_to(wheely_path(wheely), class: "card") do %>
-          <h2> <%= wheely.title %></h2>
-          <p> <%= wheely.description %></p>
-          <p> <%= wheely.price %> <i class="fas fa-euro-sign"></i></p>
-          <%= cl_image_tag wheely.photo, height: 300, width: 400, crop: :fill %>
-        <% end %>
+        <div class="wheely_card">
+          <div class="wheely_card_body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1453169753818-2feab4b4246d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4e6a8d1ca1a7de2290aceb0e458ce435&auto=format&fit=crop&w=967&q=80');">
+            <span class="price"><%= wheely.price %>€ / jour</span>
+          </div>
+          <div class="wheely_card_footer">
+            <div class="wheely_card_title"><%= wheely.title %></div>
+            <img src="https://www.w3schools.com/w3images/avatar2.png" alt="" class="wheely_card_avatar">
+          </div>
+        </div>
+
       </div>
     <% end%>
   </div>
