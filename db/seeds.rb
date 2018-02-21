@@ -8,9 +8,9 @@
 
 require 'faker'
 
-User.destroy_all
 Wheely.destroy_all
 Category.destroy_all
+User.destroy_all
 
 CATEGORIES = ["Bike", "Carriage", "Quadricycle", "Roller", "Scooter", "Segway", "Skateboard", "Tandem", "Unicycle", "Wheelbarrow"]
 
