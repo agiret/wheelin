@@ -5,7 +5,15 @@ class WheeliesController < ApplicationController
 
   def index
     @wheelies = policy_scope(Wheely).order(created_at: :desc)
-    # authorize User
+    @wheelies_geo = Wheely.where.not(latitude: nil, longitude: nil)
+
+    @markers = @wheelies_geo.map do |wheely|
+      {
+        lat: wheely.latitude,
+        lng: wheely.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/wheelies/map_box", locals: { wheely: wheely }) }
+      }
+    end
   end
 
   def show
@@ -58,6 +66,6 @@ class WheeliesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
   def wheely_params
-    params.require(:wheely).permit(:title, :address, :description, :price, :user_id, :category_id)
+    params.require(:wheely).permit(:title, :address, :description, :price, :user_id, :category_id, :photo)
   end
 end

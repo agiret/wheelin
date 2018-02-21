@@ -8,6 +8,7 @@
           <h2> <%= wheely.title %></h2>
           <p> <%= wheely.description %></p>
           <p> <%= wheely.price %> <i class="fas fa-euro-sign"></i></p>
+          <%= cl_image_tag wheely.photo, height: 300, width: 400, crop: :fill %>
         <% end %>
       </div>
     <% end%>
@@ -15,3 +16,11 @@
 </div>
 
 <%= link_to "add a new wheely",  new_wheely_path %>
+
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+></div>
