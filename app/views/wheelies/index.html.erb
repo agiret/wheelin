@@ -8,6 +8,7 @@
           <h2> <%= wheely.title %></h2>
           <p> <%= wheely.description %></p>
           <p> <%= wheely.price %> <i class="fas fa-euro-sign"></i></p>
+          <%= cl_image_tag wheely.photo, height: 300, width: 400, crop: :fill %>
         <% end %>
       </div>
     <% end%>

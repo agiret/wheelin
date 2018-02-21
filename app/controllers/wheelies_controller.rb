@@ -54,6 +54,6 @@ class WheeliesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
   def wheely_params
-    params.require(:wheely).permit(:title, :address, :description, :price, :user_id, :category_id)
+    params.require(:wheely).permit(:title, :address, :description, :price, :user_id, :category_id, :photo)
   end
 end
