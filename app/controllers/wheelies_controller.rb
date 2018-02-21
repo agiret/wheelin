@@ -1,5 +1,8 @@
 class WheeliesController < ApplicationController
   before_action :set_wheely, only: [:show, :edit, :update, :destroy]
+
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     @wheelies = policy_scope(Wheely).order(created_at: :desc)
     @wheelies_geo = Wheely.where.not(latitude: nil, longitude: nil)
