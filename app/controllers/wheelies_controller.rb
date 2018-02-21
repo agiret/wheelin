@@ -20,7 +20,7 @@ class WheeliesController < ApplicationController
   end
 
   def search
-    @wheelies = Wheely.where(category_id: params[:category_id])
+    @wheelies = policy_scope(Wheely).where(category_id: params[:category_id])
   end
 
   def new
