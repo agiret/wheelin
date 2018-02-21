@@ -8,9 +8,9 @@
 
 require 'faker'
 
-User.destroy_all
 Wheely.destroy_all
 Category.destroy_all
+User.destroy_all
 
 CATEGORIES = ["Bike", "Carriage", "Quadricycle", "Roller", "Scooter", "Segway", "Skateboard", "Tandem", "Unicycle", "Wheelbarrow"]
 
@@ -21,8 +21,8 @@ CATEGORIES.each do |category|
   CAT << cat
 end
 
-3.times do
-  user = User.create!(email: Faker::Internet.email, password: "azertyuiop")
+3.times do |i|
+  user = User.create!(email: "user#{i}@user.fr", password: "azertyuiop")
   2.times do
     cat = CAT.sample
     Wheely.create!(title: cat.name,
