@@ -13,6 +13,7 @@ Category.destroy_all
 User.destroy_all
 
 CATEGORIES = ["Bike", "Carriage", "Quadricycle", "Roller", "Scooter", "Segway", "Skateboard", "Tandem", "Unicycle", "Wheelbarrow"]
+TOWN = ["Lyon", "Paris", "Nevers", "Marseille", "Bordeaux", "Saint-Etienne", "Oullins", "Lille"]
 
 CAT = []
 
@@ -21,14 +22,14 @@ CATEGORIES.each do |category|
   CAT << cat
 end
 
-3.times do |i|
+6.times do |i|
   user = User.create!(email: "user#{i}@user.fr", password: "azertyuiop")
   2.times do
     cat = CAT.sample
     Wheely.create!(title: cat.name,
                   category: cat,
                   user: user,
-                  address: Faker::Address.city,
+                  address: "#{TOWN.sample}, France",
                   description: Faker::Simpsons.quote,
                   price: (10..50).to_a.sample)
   end
