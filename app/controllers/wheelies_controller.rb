@@ -2,6 +2,15 @@ class WheeliesController < ApplicationController
   before_action :set_wheely, only: [:show, :edit, :update, :destroy]
   def index
     @wheelies = policy_scope(Wheely).order(created_at: :desc)
+    @wheelies_geo = Wheely.where.not(latitude: nil, longitude: nil)
+
+    @markers = @wheelies_geo.map do |wheely|
+      {
+        lat: wheely.latitude,
+        lng: wheely.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/wheelies/map_box", locals: { wheely: wheely }) }
+      }
+    end
   end
 
   def show
