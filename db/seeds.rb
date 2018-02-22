@@ -11,17 +11,12 @@ require 'open-uri'
 require 'nokogiri'
 
 url = "https://fr.wikipedia.org/wiki/Liste_des_rues,_places_et_ponts_de_Lyon"
-
-puts "1"
-
 html_file = open(url).read
 html_doc = Nokogiri::HTML(html_file)
 RUES = []
 html_doc.search('.colonnes ul li a').each do |rue|
   RUES << rue.text
 end
-
-puts "2"
 
 Wheely.destroy_all
 Category.destroy_all
@@ -43,14 +38,10 @@ CATEGORIES = {
   "Wheelbarrow" => "https://i.ebayimg.com/thumbs/images/g/XQoAAOSwax5YqtZA/s-l225.jpg"
 }
 
-puts "3"
-
 CATEGORIES.each do |category, lien|
   cat = Category.create!(name: category)
   CAT << cat
 end
-
-puts "4"
 
 2.times do |i|
   user = User.create!(email: "user#{i}@user.fr", password: "azertyuiop")
@@ -67,5 +58,3 @@ puts "4"
     )
   end
 end
-
-puts "finish"
