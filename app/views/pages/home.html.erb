@@ -20,3 +20,25 @@
     </form>
   </div>
 </div>
+
+
+<div class="container">
+  <h2 class="text-center">Try one of our wheelies!</h2>
+  <div class="row">
+    <% @wheelies.each do |wheely| %>
+      <a href="#">
+        <div class="col-xs-12 col-sm-4 col-md-3 wheely_card">
+          <%= link_to(wheely_path(wheely)) do %>
+            <div class="wheely_card_body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= wheely.photo %>);">
+              <span class="price"><%= wheely.price %>€ / jour</span>
+            </div>
+            <div class="wheely_card_footer">
+              <div class="wheely_card_title"><%= wheely.title %></div>
+              <img src="https://www.w3schools.com/w3images/avatar2.png" alt="" class="wheely_card_avatar">
+            </div>
+          <% end %>
+        </div>
+      </a>
+    <% end%>
+  </div>
+</div>
