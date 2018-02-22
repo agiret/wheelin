@@ -73,8 +73,11 @@ bottom: 0px;
 
 .wheely_card{
   height: 200px;
-  background-color: red;
   margin-top: 20px;
+}
+
+.wheely_card_body:hover {
+  margin-top: -10px;
 }
 
 .wheely_card_body{
@@ -90,6 +93,7 @@ bottom: 0px;
       top: 10%;
 
   }
+  transition: margin-top 0.2s ease;
 }
 
 .wheely_card_footer{

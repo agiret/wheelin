@@ -1,8 +1,41 @@
-<h1> <%= @wheely.title %></h1>
 
-<p> <%= @wheely.description %></p>
-<p> <%= @wheely.price %> <i class="fas fa-euro-sign"></i></p>
-<%= cl_image_tag @wheely.photo, height: 300, width: 400, crop: :fill %>
+<div class="wheely-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @wheely.photo %>);">
+</div>
+<%= link_to '< Back to Wheelies', wheelies_path, class: "btn-back" %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="ad-box">
+        <h3>Category > <%= @wheely.category.name %></h3>
+        <h1> <%= @wheely.title %></h1>
+        <p> <%= @wheely.description %></p>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="map-booking-box">
+        <div
+          id="map"
+          style="width: 100%;
+          height: 250px;"
+          data-markers="<%= @marker.to_json %>"
+        ></div>
+        <div class="row">
+          <div class="col-xs-6">
+            <div id="price-booking">
+            <p> <%= @wheely.price %> € / jr </i></p>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div id="btn-booking">
+              <%= link_to 'Booking this wheely !', new_wheely_booking_path(@wheely.id), class: "btn btn-success" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <% if policy(@wheely).update? %>
   <%= link_to 'Edit', edit_wheely_path(@wheely) %> <br>
@@ -13,4 +46,3 @@
       data: { confirm: "Are you sure?" } %> <br>
 <% end %>
 
-<%= link_to 'Back to Wheelies', wheelies_path %>

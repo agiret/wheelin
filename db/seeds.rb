@@ -26,11 +26,14 @@ end
   user = User.create!(email: "user#{i}@user.fr", password: "azertyuiop")
   2.times do
     cat = CAT.sample
-    Wheely.create!(title: cat.name,
-                  category: cat,
-                  user: user,
-                  address: "#{TOWN.sample}, France",
-                  description: Faker::Simpsons.quote,
-                  price: (10..50).to_a.sample)
+    Wheely.create!(
+      title: cat.name,
+      category: cat,
+      user: user,
+      address: "#{TOWN.sample}, France",
+      description: Faker::Simpsons.quote,
+      price: (10..50).to_a.sample,
+      remote_photo_url: "https://images.unsplash.com/photo-1453169753818-2feab4b4246d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4e6a8d1ca1a7de2290aceb0e458ce435&auto=format&fit=crop&w=967&q=80"
+    )
   end
 end
