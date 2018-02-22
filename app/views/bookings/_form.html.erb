@@ -1,16 +1,10 @@
 <h2><%= @wheely.title %></h2>
 <h3><%= @wheely.price%> €/jr </h3>
 
-<%= simple_form_for(@wheely) do |f| %>
+<%= simple_form_for [@wheely, @booking] do |f| %>
   <%= f.error_notification %>
   <div class="form-inputs">
-
-    <%= f.association :category, include_blank: false %>
-    <%= f.input :address %>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.input :booking_date, data: { provide: "datepicker" }%>
   </div>
 
   <div class="form-actions">
