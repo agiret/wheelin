@@ -2,13 +2,17 @@
   <div class="banner-content">
     <h1>WheelIn</h1>
     <p>What kind of wheeler are you?</p>
-    <div class="form-group">
-      <select class="form-control" id="search_home">
-        <% Category.all.each do |category| %>
-          <option><%= category.name %></option>
-        <% end %>
-      </select>
-    </div>
-    <a class="btn btn-success btn-lg">Search</a>
+    <form action="<%= wheelies_path %>" method="get" class="form-inline">
+      <div class="form-group">
+        <select class="form-control" name="query" id="search_home">
+          <option> All </option>
+          <% Category.all.each do |category| %>
+            <option><%= category.name %></option>
+          <% end %>
+        </select>
+        <!-- <input class="form-control" type="text" name="query" placeholder="Search for something" value="<%= params[:query] %>"> -->
+      </div>
+      <input class="btn btn-success" type="submit" value="Search">
+    </form>
   </div>
 </div>

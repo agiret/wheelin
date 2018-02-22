@@ -4,8 +4,12 @@ class WheeliesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @wheelies = policy_scope(Wheely).order(created_at: :desc)
-    @wheelies_geo = Wheely.where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      @wheelies = policy_scope(Wheely).global_search("#{params[:query]}")
+    else
+      @wheelies = policy_scope(Wheely).order(created_at: :desc)
+    end
+    @wheelies_geo = @wheelies.select{ |wheely| !wheely.latitude.nil? && !wheely.longitude.nil?}
 
     @markers = @wheelies_geo.map do |wheely|
       {
@@ -14,13 +18,10 @@ class WheeliesController < ApplicationController
         # infoWindow: { content: render_to_string(partial: "/wheelies/map_box", locals: { wheely: wheely }) }
       }
     end
+
   end
 
   def show
-  end
-
-  def search
-    @wheelies = policy_scope(Wheely).where(category_id: params[:category_id])
   end
 
   def new
