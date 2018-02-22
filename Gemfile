@@ -7,6 +7,8 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
+gem 'jquery-rails'
+gem 'bootstrap-datepicker-rails'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
