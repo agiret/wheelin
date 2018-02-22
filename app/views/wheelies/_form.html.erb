@@ -1,17 +1,25 @@
-<%= simple_form_for(@wheely) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.association :category, include_blank: false %>
-    <%= f.input :address %>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1>Add a new Wheely</h1>
+      <%= simple_form_for(@wheely) do |f| %>
+        <%= f.error_notification %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+        <div class="form-inputs">
+          <%= f.input :title %>
+          <%= f.association :category, include_blank: false %>
+          <%= f.input :address %>
+          <%= f.input :description %>
+          <%= f.input :price %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>
