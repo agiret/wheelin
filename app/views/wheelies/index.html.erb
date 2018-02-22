@@ -1,10 +1,8 @@
-<h1>All our Wheelies</h1>
-
- <div class="container">
-  <div class="row">
-    <% @wheelies.each do |wheely| %>
-      <a href="#">
-        <div class="col-xs-12 col-sm-4 col-md-3 wheely_card">
+<div class="flex-container">
+  <div class="wheelies">
+    <div class="row">
+      <% @wheelies.each do |wheely| %>
+        <div class="col-xs-12 col-sm-6 col-md-4 wheely_card">
           <%= link_to(wheely_path(wheely)) do %>
             <div class="wheely_card_body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= wheely.photo %>);">
               <span class="price"><%= wheely.price %>€ / jour</span>
@@ -15,17 +13,11 @@
             </div>
           <% end %>
         </div>
-      </a>
-    <% end%>
+      <% end%>
+    </div>
+  </div>
+  <div
+    id="map"
+    data-markers="<%= @markers.to_json %>">
   </div>
 </div>
-
-<%= link_to "add a new wheely",  new_wheely_path %>
-
-
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-></div>
