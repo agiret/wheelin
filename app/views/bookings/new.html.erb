@@ -1,8 +1,6 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<h1>Book a Wheely</h1>
 
+<%= render 'form', wheely: @wheely %>
 
-<%= simple_form_for([@wheely, @booking]) do |f| %>
-  <%= f.input :booking_day %>
-  <%= f.submit %>
-<% end %>
+<%= link_to 'Back to Wheelies', :back %>
+

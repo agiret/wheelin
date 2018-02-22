@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def new
     @wheely = Wheely.find(params[:wheely_id])
+    authorize(@wheely)
     @booking = Booking.new
   end
 
