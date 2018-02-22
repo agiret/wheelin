@@ -5,7 +5,7 @@
     <% @wheelies.each do |wheely| %>
       <div class="col-xs-12 col-sm-4 col-md-3">
         <div class="wheely_card">
-          <div class="wheely_card_body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1453169753818-2feab4b4246d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4e6a8d1ca1a7de2290aceb0e458ce435&auto=format&fit=crop&w=967&q=80');">
+          <div class="wheely_card_body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= wheely.photo %>);">
             <span class="price"><%= wheely.price %>€ / jour</span>
           </div>
           <div class="wheely_card_footer">
