@@ -1,13 +1,18 @@
-<h2><%= @wheely.title %></h2>
-<h3><%= @wheely.price%> €/jr </h3>
 
-<%= simple_form_for [@wheely, @booking] do |f| %>
-  <%= f.error_notification %>
-  <div class="form-inputs">
-    <%= f.input :booking_date, as: :string %>
-  </div>
+<div class="booking-box">
+  <h2 class= "title"><%= @wheely.title %></h2>
+  <h3 class= "price"><%= @wheely.price%> €/jr </h3>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+  <%= simple_form_for [@wheely, @booking] do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :booking_date, as: :string %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, class: "btn btn-success" %>
+      <%= link_to 'Canceled', :back, class: "btn btn-default"%>
+    </div>
+  <% end %>
+</div>
