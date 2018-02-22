@@ -26,6 +26,12 @@ class WheeliesController < ApplicationController
   end
 
   def show
+    # @wheelies_geo = @wheelies.select{ |wheely| !wheely.latitude.nil? && !wheely.longitude.nil?}
+    @marker = [{
+        lat: @wheely.latitude,
+        lng: @wheely.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/wheelies/map_box", locals: { wheely: wheely }) }
+      }]
   end
 
   def new
