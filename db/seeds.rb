@@ -32,8 +32,6 @@ CAT = []
 
 CATEGORIES = {
   "Bike" => "http://fixiedesign.com/images/stories/virtuemart/product/fixie-single-speed-vert.jpg",
-  "Bike" => "http://fixiedesign.com/images/stories/virtuemart/product/fixie-single-speed-vert.jpg",
-  "Bike" => "http://fixiedesign.com/images/stories/virtuemart/product/fixie-single-speed-vert.jpg",
   "Carriage" => "http://mypnglc.com/wp-content/uploads/2013/08/carriage.jpg",
   "Quadricycle" => "https://sc01.alicdn.com/kf/HTB1HELJXPihSKJjy0Flq6ydEXXaY/202528612/HTB1HELJXPihSKJjy0Flq6ydEXXaY.jpg",
   "Roller" => "https://i2.cdscdn.com/pdt2/l/3/8/1/700x700/csl102sl38/rw/cdts-patins-a-roulettes-disco-taille-38-39.jpg",
