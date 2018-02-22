@@ -13,16 +13,24 @@
     </div>
     <div class="col-xs-12 col-sm-6">
       <div class="map-booking-box">
-        <!-- map et btn-booking-->
-        Map and btn-booking
         <div
           id="map"
-          style="width: 75%;
+          style="width: 100%;
           height: 250px;"
           data-markers="<%= @marker.to_json %>"
         ></div>
-        <p> <%= @wheely.price %> <i class="fas fa-euro-sign"></i></p>
-        <%= link_to 'Booking', new_wheely_booking_path(@wheely.id), class: "btn btn-success" %>
+        <div class="row">
+          <div class="col-xs-6">
+            <div id="price-booking">
+            <p> <%= @wheely.price %> € / jr </i></p>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div id="btn-booking">
+              <%= link_to 'Booking this wheely !', new_wheely_booking_path(@wheely.id), class: "btn btn-success" %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
