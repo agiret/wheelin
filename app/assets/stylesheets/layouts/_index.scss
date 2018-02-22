@@ -3,3 +3,20 @@
 // @import "dashboard";
 // @import "profile";
 // @import "map";
+.flex-container {
+  display: flex;
+
+}
+
+#map {
+  height: calc(100vh - 70px - 2em);
+  flex: 0 0 450px;
+  position: sticky !important;
+  top: 0 !important;
+  margin: 1em 1em 1em 0;
+}
+
+.wheelies {
+  flex-grow: 1;
+  margin: 0 1em;
+}
