@@ -7,10 +7,13 @@ class BookingsController < ApplicationController
 
   def create
     @wheely = Wheely.find(params[:wheely_id])
+    authorize(@wheely)
     @booking = @wheely.bookings.new(booking_params)
+    @booking.user = current_user
     if @booking.save
       redirect_to wheely_path(@wheely)
     else
+      raise
       render :new
     end
   end
@@ -18,6 +21,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:booking_day, :wheely_id, :user_id)
+    params.require(:booking).permit(:booking_date, :wheely_id, :user_id)
   end
 end
