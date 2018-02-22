@@ -5,7 +5,11 @@ class WheeliesController < ApplicationController
 
   def index
     if params[:query].present?
-      @wheelies = policy_scope(Wheely).global_search("#{params[:query]}")
+      if params[:query] == "All"
+        @wheelies = policy_scope(Wheely).order(created_at: :desc).near("#{params[:location]}", 1)
+      else
+        @wheelies = policy_scope(Wheely).global_search("#{params[:query]}").near("#{params[:location]}", 1)
+      end
     else
       @wheelies = policy_scope(Wheely).order(created_at: :desc)
     end
