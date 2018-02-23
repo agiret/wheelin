@@ -12,14 +12,14 @@
             <%= f.association :category, include_blank: false %>
             <%= f.input :address %>
             <%= f.input :description %>
-            <%= f.input :price %>
+            <%= f.input :price, label: 'Price (€ / jr)' %>
             <%= f.input :photo %>
             <%= f.input :photo_cache, as: :hidden %>
           </div>
 
           <div class="form-actions">
             <%= link_to 'Canceled', :back, class: "btn btn-default"%>
-            <%= f.button :submit, 'Post', class: "btn btn-success" %>
+            <%= f.button :submit, 'Post my wheely', class: "btn btn-success pull-right" %>
           </div>
         <% end %>
       </div>
