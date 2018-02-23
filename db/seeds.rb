@@ -18,6 +18,7 @@ html_doc.search('.colonnes ul li a').each do |rue|
   RUES << rue.text
 end
 
+Booking.destroy_all
 Wheely.destroy_all
 Category.destroy_all
 User.destroy_all
