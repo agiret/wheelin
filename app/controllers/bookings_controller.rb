@@ -13,7 +13,6 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to wheely_path(@wheely)
     else
-      raise
       render :new
     end
   end

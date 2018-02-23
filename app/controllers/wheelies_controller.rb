@@ -18,8 +18,8 @@ class WheeliesController < ApplicationController
     @markers = @wheelies_geo.map do |wheely|
       {
         lat: wheely.latitude,
-        lng: wheely.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/wheelies/map_box", locals: { wheely: wheely }) }
+        lng: wheely.longitude,
+        infoWindow: { content: render_to_string(partial: "/wheelies/map_box", locals: { wheely: wheely }) }
       }
     end
 
