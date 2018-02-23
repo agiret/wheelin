@@ -4,6 +4,6 @@
 //= require_tree .
 
 $('#booking_booking_date').datepicker({
-    format: "yy/mm/dd",
+    format: "dd-mm-yyyy",
     weekStart: 1
 });
